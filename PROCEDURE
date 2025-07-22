@@ -1,0 +1,101 @@
+
+ **Files to Create:**
+
+1. `dff.v`, `srff.v`, `jkff.v` – Source code files
+2. `dff_tb.v`, `srff_tb.v`, `jkff_tb.v` – Testbench files
+3. `constraints_top.sdc` – SDC constraint file
+
+---
+
+ **Procedure (Step-by-Step)**
+
+---
+
+### **A) Functional Simulation (Using Incisive)**
+
+#### 1. **Open Terminal and Load Tools**
+
+```bash
+csh
+source /home/install/cshrc
+```
+
+#### 2. **Create Verilog Files**
+
+```bash
+gedit dff.v
+gedit srff.v
+gedit jkff.v
+gedit dff_tb.v
+```
+
+> Repeat the same for `srff_tb.v` and `jkff_tb.v`
+
+#### 3. **Launch Simulation Tool**
+
+```bash
+nclaunch -new &
+```
+
+#### 4. **Compile and Simulate**
+
+```bash
+ncverilog +access+rwc dff.v dff_tb.v
+```
+
+> Replace `dff.v` and `dff_tb.v` with `srff.v`, `jkff.v`, etc., as needed.
+
+#### 5. **View Waveforms**
+
+Use SimVision or nclaunch GUI to:
+
+* Compile
+* Elaborate
+* Simulate
+* View output waveform
+
+---
+
+### **B) Synthesis (Using Cadence Genus)**
+
+#### 1. **Launch Genus**
+
+```bash
+genus -gui
+```
+
+#### 2. **Create SDC File**
+
+```bash
+gedit constraints_top.sdc
+```
+
+📌 Example SDC for D Flip-Flop:
+
+```tcl
+create_clock -name clk -period 10.000 [get_ports clk]
+set_input_delay 2.5 -clock clk [all_inputs]
+set_output_delay 2.5 -clock clk [all_outputs]
+```
+
+#### 3. **Run Genus Synthesis Commands**
+
+```tcl
+read_libs /home/install/FOUNDRY/digital/90nm/dig/lib/slow.lib
+read_hdl dff.v
+elaborate
+read_sdc constraints_top.sdc
+set_db syn_generic_effort medium
+set_db syn_map_effort medium
+set_db syn_opt_effort medium
+syn_generic
+syn_map
+syn_opt
+report_timing > dff_timing.rep
+report_area > dff_area.rep
+report_power > dff_power.rep
+write_hdl > dff_netlist.v
+write_sdc > dff_sdc.sdc
+```
+
+> Repeat the same with `srff.v`, `jkff.v` for SR and JK flip-flops.
