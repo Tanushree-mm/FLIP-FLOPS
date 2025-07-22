@@ -3,12 +3,14 @@
 **OBJECTIVE**
 
 Flip-Flop (D,SR,JK)
+
 ● Write Verilog Description.
 ● Verify functionality using Test-bench.
 ● Synthesize the design targeting suitable library and by setting area and timing
 constraints.
 ● Verify the functionality using Gate level netlist and compare the results at RTL
 and Gate level Netlist.
+
 From the report generated identify Critical path, Maximum delay, Total Number of
 cells, Power Required and Total Area required.
 
