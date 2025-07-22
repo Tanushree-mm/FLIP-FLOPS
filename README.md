@@ -20,12 +20,25 @@ changes. There are basically four main types of latches and flip-flops: SR, D, a
 
 **SR FLIP FLOP SIMULATION**
 
+<img width="695" height="131" alt="Image" src="https://github.com/user-attachments/assets/312910c0-1dcd-4218-bcf8-7d2df5448780" />
+
 **SR FLIP FLOP SYNTHESIS**
+
+<img width="334" height="360" alt="Image" src="https://github.com/user-attachments/assets/ffbb9549-9bee-421d-a297-58d0407de6de" />
 
 **D FLIP FLOP SIMULATION**
 
+<img width="473" height="85" alt="Image" src="https://github.com/user-attachments/assets/e51cd943-f361-4b2a-8503-c976d93c91c1" />
+
 **D FLIP FLOP SYNTHESIS**
+
+<img width="376" height="234" alt="Image" src="https://github.com/user-attachments/assets/0267b1c9-6232-4f6a-a2da-78df86f8b1a2" />
 
 **JK FLIP FLOP SIMULATION**
 
+<img width="807" height="146" alt="Image" src="https://github.com/user-attachments/assets/432fe475-a65e-428e-8656-30d200d34d8c" />
+
 **JK FLIP FLOP SYNTHESIS**
+
+<img width="362" height="362" alt="Image" src="https://github.com/user-attachments/assets/6441f835-56d6-4f2a-86c7-bd8ebcb28329" />
+
